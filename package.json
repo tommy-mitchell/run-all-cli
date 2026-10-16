@@ -1,0 +1,69 @@
+{
+	"name": "run-all-cli",
+	"version": "0.0.0",
+	"description": "Run multiple commands sequentially, failing if any command fails.",
+	"license": "MIT",
+	"repository": "tommy-mitchell/run-all-cli",
+	"author": "Tommy Mitchell (https://tommymitchell.io)",
+	"type": "module",
+	"imports": {
+		"#src/*.ts": "./src/*.ts"
+	},
+	"bin": {
+		"run-all": "./dist/cli.js"
+	},
+	"engines": {
+		"node": "^22.22 || ^24.15 || >=26"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "tsc -p tsconfig.build.json && execify --pkg",
+		"lint": "./src/cli.ts 'dprint check' xo",
+		"format": "dprint fmt && xo --fix",
+		"test": "c8 ava && tsc --noEmit"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"cli",
+		"cli-app",
+		"command-line",
+		"command",
+		"sequential",
+		"npm",
+		"npm-scripts",
+		"tool",
+		"task",
+		"run-all",
+		"semi",
+		"semicolon",
+		"bash",
+		"shell",
+		"sh",
+		"cross-platform"
+	],
+	"dependencies": {
+		"args-tokenizer": "^0.3.0",
+		"tinyexec": "^1.3.1"
+	},
+	"devDependencies": {
+		"@tommy-mitchell/configs": "^0.3.0",
+		"@tommy-mitchell/test-helpers": "^0.1.1",
+		"@types/node": "^22.20",
+		"ava": "^8.0.1",
+		"c8": "^12.0.0",
+		"dprint": "^0.63.0",
+		"execify-cli": "^1.0.0",
+		"typescript": "~6.0.3",
+		"xo": "^5.0.1"
+	},
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"environmentVariables": {
+			"concurrency": "10"
+		}
+	}
+}

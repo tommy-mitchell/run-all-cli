@@ -1,0 +1,13 @@
+{
+	"extends": "@tommy-mitchell/configs/ts",
+	"include": ["src", "test"],
+	"compilerOptions": {
+		"erasableSyntaxOnly": true,
+		"moduleResolution": "nodenext",
+		"rewriteRelativeImportExtensions": true,
+		"noEmit": true,
+		"types": ["node"],
+		"verbatimModuleSyntax": true,
+		"resolveJsonModule": true,
+	},
+}
