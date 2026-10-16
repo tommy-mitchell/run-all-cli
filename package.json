@@ -1,6 +1,6 @@
 {
 	"name": "run-all-cli",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Run multiple commands sequentially, failing if any command fails.",
 	"license": "MIT",
 	"repository": "tommy-mitchell/run-all-cli",
